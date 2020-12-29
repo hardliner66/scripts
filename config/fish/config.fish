@@ -18,6 +18,6 @@ end
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE
-  source ~/.config/fish/secrets.fish
+  source $SECRETS_FILE
 end
 set -e SECRETS_FILE
