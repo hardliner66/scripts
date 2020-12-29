@@ -48,7 +48,9 @@ nnoremap <silent><leader>j :bp<CR>
 nnoremap <silent><leader>d :bd<CR>
 nnoremap <silent><leader>w :w<CR>
 nnoremap <silent><leader>q :q<CR>
-nnoremap <silent><leader><leader>q :q!<CR>
+
+" force quit with non-zero exit code
+nnoremap <silent><leader><leader>q :cq!<CR>
 nnoremap <silent><leader>o gf<ESC>
 
 nnoremap <leader>ef :!cargo build<cr>
