@@ -12,7 +12,6 @@ function vc
   popd
 end
 
-
 # Fish fzf
 begin
     set --local FZF_PATH /usr/share/fish/vendor_functions.d/fzf_key_bindings.fish
