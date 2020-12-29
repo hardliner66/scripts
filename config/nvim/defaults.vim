@@ -48,6 +48,7 @@ nnoremap <silent><leader>j :bp<CR>
 nnoremap <silent><leader>d :bd<CR>
 nnoremap <silent><leader>w :w<CR>
 nnoremap <silent><leader>wq :wq<CR>
+nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
 nnoremap <silent><leader>q :q<CR>
 
 " force quit with non-zero exit code
