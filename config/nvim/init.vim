@@ -42,15 +42,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'cespare/vim-toml'
 
 " themes
-Plug 'lewis6991/moonlight.vim'
+" Plug 'lewis6991/moonlight.vim'
 Plug 'nightsense/office'
-Plug 'nightsense/carbonized'
-Plug 'whatyouhide/vim-gotham'
-Plug 'mhartington/oceanic-next'
-Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
-Plug 'chuling/ci_dark'
-Plug 'cocopon/iceberg.vim'
+" Plug 'nightsense/carbonized'
+" Plug 'whatyouhide/vim-gotham'
+" Plug 'mhartington/oceanic-next'
+" Plug 'morhetz/gruvbox'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'chuling/ci_dark'
+" Plug 'cocopon/iceberg.vim'
 "Initialize plugin system
 call plug#end()
 " set termguicolors     " enable true colors support
