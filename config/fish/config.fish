@@ -3,9 +3,9 @@
 set -g -x DIRENV_LOG_FORMAT ""
 set -x EDITOR nvim
 # eval (direnv hook fish)
-alias nano nvim
+
 alias v nvim
-# alias vc "nvim ~/scripts && ~/scripts/install.sh"
+
 function vc
   pushd ~/scripts
   nvim ~/scripts/$argv && ~/scripts/install.sh
