@@ -21,6 +21,8 @@ begin
     end
 end
 
+set -U fish_user_paths ~/.npm/bin
+
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE
   source $SECRETS_FILE

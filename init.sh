@@ -10,5 +10,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 pushd $(dirname "${BASH_SOURCE[0]}")
 ./install.sh
 
+npm config set prefix ~/.npm
+
 # reboot to get the keyboard stuff working
 reboot
