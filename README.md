@@ -48,10 +48,10 @@ There is an autocomplete script for vc, which lists all files inside of ~/scropt
 ## Keybinds
 leader is set to space
 
-- <leader>n          => toggle line number
-- <leader>w          => save
-- <leader>wq         => save and quit
-- <leader>q          => quit
-- <leader><leader>q  => quit with non zero exit code (this can be used to quit out of vc without triggering a reload)
-- <leader><leader>wq => save and quit with non zero exit code (this can be used to quit out of vc without triggering a reload)
-- <leader>o          => open file under cursor 
+- \<leader\>n          => toggle line number
+- \<leader\>w          => save
+- \<leader\>wq         => save and quit
+- \<leader\>q          => quit
+- \<leader\>\<leader\>q  => quit with non zero exit code (this can be used to quit out of vc without triggering a reload)
+- \<leader\>\<leader\>wq => save and quit with non zero exit code (this can be used to quit out of vc without triggering a reload)
+- \<leader\>o          => open file under cursor 
