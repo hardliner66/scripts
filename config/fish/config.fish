@@ -8,7 +8,7 @@ alias v nvim
 # alias vc "nvim ~/scripts && ~/scripts/install.sh"
 function vc
   pushd ~/scripts
-  nvim ~/scripts && ~/scripts/install.sh
+  nvim ~/scripts/$argv && ~/scripts/install.sh
   popd
 end
 
