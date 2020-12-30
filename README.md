@@ -38,6 +38,8 @@ There is an autocomplete script for vc, which lists all files inside of ~/scropt
 - $mod+Shift+P      => open rofi
 - $mod+Shift+E      => send i3-msg exit with confirmation
 - $mod+Shift+F4     => shutdown with confirmation
+- $mod+V            => split vertical
+- $mod+B            => split horizontal
 
 # nvim
 ## General
