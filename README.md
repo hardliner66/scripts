@@ -32,7 +32,7 @@ There is an autocomplete script for vc, which lists all files inside of ~/scropt
 ## Custom Shortcuts
 - $mod+Return       => opens alacritty
 - $mod+Shift+Return => opens a private alacritty window
-- $mod+Shift+Tab    => swaps the screens
+- $mod+Tab    => swaps the screens
 - $mod+Shift+S      => make a screenshot with selection in scrot and copy it into the clipboard
 - $mod+S            => make a screenshot of the whole screen in scrot and copy it into the clipboard
 - $mod+Shift+P      => open rofi

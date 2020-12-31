@@ -100,7 +100,7 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym --release $mod+Shift+s exec scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 bindsym --release $mod+s exec scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
-bindsym $mod+Shift+Tab exec ~/scripts/i3-display-swap.sh
+bindsym $mod+Tab exec ~/scripts/i3-display-swap.sh
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
