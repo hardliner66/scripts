@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pkill hardbot
+cargo run --release &
