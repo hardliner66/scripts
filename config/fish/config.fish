@@ -5,10 +5,15 @@ set -g -x EDITOR nvim
 # eval (direnv hook fish)
 
 alias v nvim
+alias v. "nvim ."
 
 function vc
   pushd ~/scripts
-  nvim ~/scripts/$argv && ~/scripts/install.sh
+  if count $argv > /dev/null
+    nvim $argv && ~/scripts/install.sh
+  else
+    nvim . && ~/scripts/install.sh
+  end
   popd
 end
 
