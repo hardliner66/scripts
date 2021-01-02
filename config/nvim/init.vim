@@ -36,7 +36,10 @@ colorscheme office-dark
 
 let g:NERDTreeWinPos = "right"
 
-" GoTo code navigation.
+highlight Normal guifg=#b5b5aa guibg=#181818
+highlight LineNr guifg=#9e9e95 guibg=#181818
+highlight CursorLineNr guifg=#a0a0a0 guibg=#303030
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
