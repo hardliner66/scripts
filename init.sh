@@ -4,8 +4,9 @@ sudo localectl set-x11-keymap de "" "nodeadkeys" caps:escape
 
 if command -v pacman &> /dev/null
 then
-  sudo pacman -S --noconfirm base-devel discord polybar fakeroot binutils rofi fish i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm dmenu opusfile miniupnpc fzf neofetch alacritty
+  sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm dmenu opusfile miniupnpc fzf neofetch alacritty nitrogen
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
+  chsh -s /usr/bin/fish
 
   mkdir -p ~/aur-packages
   pushd ~/aur-packages
