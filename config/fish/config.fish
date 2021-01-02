@@ -1,7 +1,7 @@
 # -g means global, but shouldn't matter if in config.fish
 # -x means export to sub processes
 set -g -x DIRENV_LOG_FORMAT ""
-set -x EDITOR nvim
+set -g -x EDITOR nvim
 # eval (direnv hook fish)
 
 alias v nvim
