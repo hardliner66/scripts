@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pushd $1
+ls src/*.rs | entr -s 'cargo build --release && '$(dirname "${BASH_SOURCE[0]}")'/cargo_restarter '$2''
+popd

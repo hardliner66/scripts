@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ls src/*.rs | entr -s 'cargo build --release && ~/scripts/restart_hardbot' 
