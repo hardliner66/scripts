@@ -6,7 +6,8 @@ if command -v pacman &> /dev/null
 then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
                   i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
-                  dmenu opusfile miniupnpc fzf neofetch alacritty nitrogen entr
+                  dmenu opusfile miniupnpc fzf neofetch alacritty nitrogen \
+                  entr python3
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
   chsh -s /usr/bin/fish
 
@@ -23,6 +24,7 @@ then
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
   popd
+  python3 -m pip install --user --upgrade pynvim
 fi
 
 # install vim plug
