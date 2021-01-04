@@ -1,3 +1,6 @@
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -69,9 +72,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 
 " auto import
 nmap <silent> <M-Enter> <Plug>(coc-codeaction)
