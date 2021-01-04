@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
+DIRECTORY=$1
+BINARY_NAME=$2
+shift 2
 
-pushd $1
-ls src/*.rs | entr -s 'cargo build --release && '$(dirname "${BASH_SOURCE[0]}")'/cargo_restarter '$2''
-popd
+pushd $DIRECTORY>/dev/null
+
+export SHELL=bash
+export RESTARTER_ARGS="$@"
+
+ls src/*.rs *.toml | entr -s 'cargo build --release && '$(dirname "${BASH_SOURCE[0]}")'/cargo_restarter '$BINARY_NAME' ${RESTARTER_ARGS}'
+popd>/dev/null
+pkill $BINARY_NAME 2>/dev/null
