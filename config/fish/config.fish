@@ -34,3 +34,6 @@ if test -e $SECRETS_FILE
   source $SECRETS_FILE
 end
 set -e SECRETS_FILE
+
+function fish_greeting
+end
