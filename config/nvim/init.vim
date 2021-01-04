@@ -25,12 +25,16 @@ Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'cespare/vim-toml'
+Plug 'vimwiki/vimwiki'
 
 " themes
 Plug 'nightsense/office'
 call plug#end()
 
+set nocompatible
+filetype plugin on
 syntax on
+
 set termguicolors
 colorscheme office-dark
 
@@ -65,6 +69,9 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " auto import
 nmap <silent> <M-Enter> <Plug>(coc-codeaction)
