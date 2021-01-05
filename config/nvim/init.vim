@@ -1,6 +1,3 @@
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -33,6 +30,10 @@ Plug 'vimwiki/vimwiki'
 " themes
 Plug 'nightsense/office'
 call plug#end()
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>F2 <Plug>(coc-rename)
 
 set nocompatible
 filetype plugin on
