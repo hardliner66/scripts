@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export MONITOR=$(xrandr | grep HDMI | cut -d ' ' -f 1)
+export MONITOR=$(xrandr | grep -i HDMI | grep -iw connected | cut -d ' ' -f 1)
 
 # Terminate already running bar instances
 killall -q polybar

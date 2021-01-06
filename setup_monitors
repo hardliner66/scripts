@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export MONITOR=$(xrandr | grep -i DP | grep -iw connected | cut -d ' ' -f 1)
+export EXTERNAL_MONITOR=$(xrandr | grep -i HDMI | grep -iw connected | cut -d ' ' -f 1)
+
+xrandr --output $EXTERNAL_MONITOR --auto --right-of $MONITOR
