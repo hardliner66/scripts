@@ -194,5 +194,5 @@ for_window [class=".*"] border pixel 0
 gaps inner 7
 
 exec --no-startup-id nitrogen --restore
-exec xrandr --output HDMI2 --auto --right-of eDP1
+exec $HOME/scripts/setup_monitors
 exec $HOME/scripts/set_mouse.sh
