@@ -196,3 +196,7 @@ gaps inner 7
 exec --no-startup-id nitrogen --restore
 exec $HOME/scripts/setup_monitors
 exec $HOME/scripts/set_mouse.sh
+
+# rebind caps-lock to escape
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"

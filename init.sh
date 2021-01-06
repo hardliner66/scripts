@@ -1,6 +1,4 @@
 #!/bin/bash
-# rebind caps-lock to escape
-sudo localectl set-x11-keymap de "" "nodeadkeys" caps:escape
 
 if command -v pacman &> /dev/null
 then
