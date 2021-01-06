@@ -9,11 +9,11 @@ alias v. "nvim ."
 
 function vc
   pushd ~/scripts
+  set file_path .
   if count $argv > /dev/null
-    nvim $argv && ~/scripts/install.sh
-  else
-    nvim . && ~/scripts/install.sh
+    set file_path $argv
   end
+  nvim $file_path && ~/scripts/update.sh
   popd
 end
 
