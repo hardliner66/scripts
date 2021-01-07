@@ -26,8 +26,9 @@ begin
     end
 end
 
-set -U fish_user_paths ~/.npm/bin
-set -U fish_user_paths ~/scripts
+set -U fish_user_paths $fish_user_paths ~/.npm/bin
+set -U fish_user_paths $fish_user_paths ~/scripts
+set -U fish_user_paths $fish_user_paths ~/.gem/ruby/2.7.0/bin
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE
