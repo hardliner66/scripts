@@ -1,7 +1,7 @@
 let mapleader = " "
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set whichwrap+=<,>,h,l,[,]
 set incsearch
@@ -26,7 +26,7 @@ set mouse=
 set noswapfile
 "set colorcolumn=110
 "set nosmd
-"set hidden
+set hidden
 
 set relativenumber
 set number
@@ -44,8 +44,11 @@ noremap <Right> <Nop>
 "inoremap <Right> <Nop>
 
 nnoremap <silent><leader>k :bn<CR>
+nnoremap <silent><leader><leader>k :bn!<CR>
 nnoremap <silent><leader>j :bp<CR>
+nnoremap <silent><leader><leader>j :bp!<CR>
 nnoremap <silent><leader>d :bd<CR>
+nnoremap <silent><leader><leader>d :bd!<CR>
 nnoremap <silent><leader>w :w<CR>
 nnoremap <silent><leader>wq :wq<CR>
 nnoremap <silent><leader>q :q<CR>
