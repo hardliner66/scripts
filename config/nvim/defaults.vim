@@ -2,6 +2,8 @@ let mapleader = " "
 
 set tabstop=4
 set shiftwidth=4
+set nobackup
+set nowritebackup
 set expandtab
 set whichwrap+=<,>,h,l,[,]
 set incsearch

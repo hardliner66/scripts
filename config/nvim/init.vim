@@ -51,6 +51,11 @@ let g:NERDTreeWinPos = "right"
 highlight Normal guifg=#b5b5aa guibg=#181818
 highlight LineNr guifg=#9e9e95 guibg=#181818
 highlight CursorLineNr guifg=#a0a0a0 guibg=#303030
+highlight Pmenu guifg=#f0f0e1 guibg=#101010
+highlight CocErrorSign guifg=#aa0000
+highlight CocHintSign guifg=#15889d
+
+nmap <silent> <leader>h :CocCommand rust-analyzer.toggleInlayHints<cr>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
