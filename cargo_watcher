@@ -9,6 +9,6 @@ export SHELL=bash
 export RESTARTER_ARGS="$@"
 export RUST_BACKTRACE=1
 
-while true; do ls src/*.rs *.toml | entr -d -s 'cargo build && '$(dirname "${BASH_SOURCE[0]}")'/cargo_restarter '$BINARY_NAME' ${RESTARTER_ARGS}'; done
+while true; do ls src/*.rs *.toml | entr -d -s 'cargo build && '$(dirname "${BASH_SOURCE[0]}")'/cargo_restarter '$BINARY_NAME' ${RESTARTER_ARGS}' | grep -iv "^bash exited with error code"; done
 popd>/dev/null
 pkill $BINARY_NAME 2>/dev/null
