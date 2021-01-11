@@ -11,6 +11,7 @@ Plug 'scrooloose/nerdtree'
 " Plugin to help surrond stuff with other stuff
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
@@ -21,7 +22,8 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
+Plug 'sheerun/vim-polyglot'
+
 Plug 'dense-analysis/ale'
 Plug 'ap/vim-buftabline'
 
@@ -31,17 +33,46 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'cespare/vim-toml'
 Plug 'vimwiki/vimwiki'
 
+Plug 'itchyny/lightline.vim'
+
+Plug 'arthurxavierx/vim-caser'
+
+Plug 'mbbill/undotree'
+
 " themes
 Plug 'nightsense/office'
 call plug#end()
+
+source ~/.config/nvim/defaults.vim
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>F2 <Plug>(coc-rename)
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Lightline
+let g:lightline = {
+  \     'colorscheme': 'powerlineish',
+  \     'active': {
+  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \     }
+  \ }
+
 set nocompatible
 filetype plugin on
 syntax on
+
+set undodir=~/.config/nvim/undodir " set undotree file directory
+set undofile " set undotree to save to file
+
+" " Map show undo tree
+nnoremap <leader>u :UndotreeShow<CR>
 
 set termguicolors
 colorscheme office-dark
@@ -89,5 +120,3 @@ nmap <silent> <M-Enter> <Plug>(coc-codeaction)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
-source ~/.config/nvim/defaults.vim
