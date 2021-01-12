@@ -61,6 +61,7 @@ nnoremap <silent><leader><leader>q :cq!<CR>
 nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
 
 nnoremap <leader>cb :!cargo build<cr>
+nnoremap <leader>cbr :!cargo build --release<cr>
 nnoremap <leader>ct :!cargo test<cr>
 nnoremap <leader>cr :!cargo run<cr>
 nnoremap <leader>crr :!cargo run --release<cr>
@@ -69,5 +70,23 @@ nnoremap <leader>crr :!cargo run --release<cr>
 nnoremap <Leader>ve :e $MYVIMRC<CR>
 " " Reload vimr configuration file
 nnoremap <Leader>vr :source $MYVIMRC<CR>
+
+" -----------------------------------------------------------------------------
+"     - Grepping -
+"     Grepping with ripgrep.
+"     If you don't have ripgrep installed you are in trouble!
+" -----------------------------------------------------------------------------
+set grepprg=rg\ --vimgrep
+
+function RipGrepping(search_term)
+    silent! exe 'grep! -i -F "' . a:search_term . '"'
+    redraw!
+    if len(getqflist()) > 0 
+        :copen
+    endif
+endfunction
+command! -nargs=* Find call RipGrepping(<q-args>)
+
+nmap <C-f> :Find 
 
 cmap w!! w !sudo /run/current-system/sw/bin/tee > /dev/null %
