@@ -36,6 +36,8 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'arthurxavierx/vim-caser'
 
+Plug 'hardliner66/neovim-twitch-chat'
+
 " themes
 Plug 'nightsense/office'
 call plug#end()
