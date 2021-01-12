@@ -3,8 +3,6 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
 
-" Make sure you use single quotes
-
 " File tree
 Plug 'scrooloose/nerdtree'
 
@@ -27,8 +25,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'ap/vim-buftabline'
 
-Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'cespare/vim-toml'
 Plug 'vimwiki/vimwiki'
@@ -68,6 +67,14 @@ syntax on
 
 set termguicolors
 colorscheme office-dark
+
+augroup Rainbow
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+    au Syntax * RainbowParenthesesLoadChevrons
+augroup END
 
 let g:NERDTreeWinPos = "right"
 
