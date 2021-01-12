@@ -37,8 +37,6 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'arthurxavierx/vim-caser'
 
-Plug 'vim-scripts/ZoomWin'
-
 " themes
 Plug 'nightsense/office'
 call plug#end()
