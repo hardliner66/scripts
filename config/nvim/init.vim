@@ -37,7 +37,7 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'arthurxavierx/vim-caser'
 
-Plug 'mbbill/undotree'
+Plug 'vim-scripts/ZoomWin'
 
 " themes
 Plug 'nightsense/office'
@@ -67,12 +67,6 @@ let g:lightline = {
 set nocompatible
 filetype plugin on
 syntax on
-
-set undodir=~/.config/nvim/undodir " set undotree file directory
-set undofile " set undotree to save to file
-
-" " Map show undo tree
-nnoremap <leader>u :UndotreeShow<CR>
 
 set termguicolors
 colorscheme office-dark
