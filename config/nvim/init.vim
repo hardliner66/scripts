@@ -39,6 +39,8 @@ Plug 'arthurxavierx/vim-caser'
 Plug 'hardliner66/neovim-twitch-chat'
 Plug 'tpope/vim-dotenv'
 
+Plug 'mtth/scratch.vim'
+
 " themes
 Plug 'nightsense/office'
 call plug#end()

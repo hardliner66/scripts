@@ -1,0 +1,61 @@
+[general]
+save_time = 60
+hype_emote = "iamhar2Bob"
+
+[points]
+ticks_per_message = 10
+points_per_tick = 1
+tick_speed = 6
+steal_chance = 0.001
+steal_min = 1
+steal_max = 10
+
+[variables]
+ARCTIC = "Look what @ArcticSpaceFox made: iamhar2Bob iamhar2Energy"
+TOGGLEBIT = "https://www.twitch.tv/togglebit"
+NRT = "https://www.twitch.tv/neonraytracer"
+BROOKS = "https://www.twitch.tv/brookzerker"
+GITHUB = "https://github.com/hardliner66"
+DOTFILES = "https://github.com/hardliner66/scripts"
+DISCORD = "https://discord.gg/nbuGqpA"
+
+[aliases]
+"github" = "gh"
+"git" = "gh"
+"togglebit" = "toggle"
+"neonraytracer" = "nrt"
+"brookzerker" = "brooks"
+"arcticspacefox" = "arctic"
+"dotfiles" = "dot"
+"scripts" = "dot"
+"discord" = "dc"
+
+[commands]
+"ping" = "pong"
+"gh" = "$GITHUB"
+"toggle" = "$TOGGLEBIT"
+"nrt" = "$NRT"
+"brooks" = "$BROOKS"
+"arctic" = "$ARCTIC"
+"bob" = "iamhar2Bob"
+"energy" = "iamhar2Energy"
+"lul" = "LUL"
+"os" = "Hardliner is using Manjaro btw."
+"dot" = "$DOTFILES"
+"dc" = "$DISCORD"
+
+[auto_commands]
+time = 300
+commands = ["dc", "dot", "arctic"]
+
+[user_access.iamhardliner]
+is_admin = true
+
+[user_access.arcticspacefox]
+is_mod = true
+
+[user_access.iamhardbot]
+is_ignored = true
+
+[user_access.pretzelrocks]
+is_ignored = true
