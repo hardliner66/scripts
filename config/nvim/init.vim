@@ -37,12 +37,25 @@ Plug 'itchyny/lightline.vim'
 Plug 'arthurxavierx/vim-caser'
 
 Plug 'hardliner66/neovim-twitch-chat'
+Plug 'tpope/vim-dotenv'
 
 " themes
 Plug 'nightsense/office'
 call plug#end()
 
 source ~/.config/nvim/defaults.vim
+
+function! s:loadEnv()
+    if filereadable(".env")
+        Dotenv(".")
+    endif
+endfunction
+
+command! -nargs=0 LoadEnv call s:loadEnv()
+
+augroup dotenv
+    au VimEnter * LoadEnv
+augroup END
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
