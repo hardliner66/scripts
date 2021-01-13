@@ -47,6 +47,8 @@ call plug#end()
 
 source ~/.config/nvim/defaults.vim
 
+let g:twitch_scratch_autosend = 1
+
 function! s:loadEnv()
     if filereadable(".env")
         Dotenv .
