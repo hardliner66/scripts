@@ -2,19 +2,20 @@
 # -x means export to sub processes
 set -g -x DIRENV_LOG_FORMAT ""
 set -g -x EDITOR nvim
+
 # eval (direnv hook fish)
 
 alias v nvim
 alias v. "nvim ."
 
 function vc
-  pushd ~/scripts
-  set file_path .
-  if count $argv > /dev/null
-    set file_path $argv
-  end
-  nvim $file_path && ~/scripts/update.sh
-  popd
+    pushd ~/scripts
+    set file_path .
+    if count $argv > /dev/null
+        set file_path $argv
+    end
+    nvim $file_path && ~/scripts/update.sh
+    popd
 end
 
 # Fish fzf
