@@ -47,7 +47,7 @@ source ~/.config/nvim/defaults.vim
 
 function! s:loadEnv()
     if filereadable(".env")
-        Dotenv(".")
+        Dotenv .
     endif
 endfunction
 
