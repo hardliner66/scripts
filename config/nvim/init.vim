@@ -3,8 +3,8 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
 
-" File tree
-Plug 'scrooloose/nerdtree'
+" " File tree
+" Plug 'scrooloose/nerdtree'
 
 " Plugin to help surrond stuff with other stuff
 Plug 'tpope/vim-surround'
@@ -46,6 +46,17 @@ Plug 'nightsense/office'
 call plug#end()
 
 source ~/.config/nvim/defaults.vim
+
+function! s:checkForBrowse(dir) abort
+    if !isdirectory(a:dir)
+        return
+    endif
+    " call Telescope("find_files")
+endfunction
+
+augroup OpenTelescope
+    au BufEnter,VimEnter * call s:checkForBrowse(expand('<amatch>'))
+augroup END
 
 let g:twitch_scratch_autosend = 1
 

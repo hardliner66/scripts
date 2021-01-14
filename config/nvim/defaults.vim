@@ -52,13 +52,13 @@ nnoremap <silent><leader><leader>j :bp!<CR>
 nnoremap <silent><leader>d :bd<CR>
 nnoremap <silent><leader><leader>d :bd!<CR>
 nnoremap <silent><leader>w :w<CR>
-nnoremap <silent><leader>wq :wq<CR>
+" nnoremap <silent><leader>wq :wq<CR>
 nnoremap <silent><leader>q :q<CR>
 nnoremap <silent><leader>o gf<ESC>
 
 " force quit with non-zero exit code
 nnoremap <silent><leader><leader>q :cq!<CR>
-nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
+" nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
 
 nnoremap <leader>cb :!cargo build<cr>
 nnoremap <leader>cbr :!cargo build --release<cr>
