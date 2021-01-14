@@ -1,6 +1,7 @@
 [general]
 save_time = 60
 hype_emote = "iamhar2Bob"
+ignored_users = ["iamhardbot", "pretzelrocks"]
 
 [points]
 ticks_per_message = 10
@@ -18,44 +19,29 @@ BROOKS = "https://www.twitch.tv/brookzerker"
 GITHUB = "https://github.com/hardliner66"
 DOTFILES = "https://github.com/hardliner66/scripts"
 DISCORD = "https://discord.gg/nbuGqpA"
-
-[aliases]
-"github" = "gh"
-"git" = "gh"
-"togglebit" = "toggle"
-"neonraytracer" = "nrt"
-"brookzerker" = "brooks"
-"arcticspacefox" = "arctic"
-"dotfiles" = "dot"
-"scripts" = "dot"
-"discord" = "dc"
+BEGIN = "https://www.twitch.tv/beginbot"
 
 [commands]
 "ping" = "pong"
-"gh" = "$GITHUB"
-"toggle" = "$TOGGLEBIT"
-"nrt" = "$NRT"
-"brooks" = "$BROOKS"
-"arctic" = "$ARCTIC"
 "bob" = "iamhar2Bob"
 "energy" = "iamhar2Energy"
 "lul" = "LUL"
 "os" = "Hardliner is using Manjaro btw."
-"dot" = "$DOTFILES"
-"dc" = "$DISCORD"
+"beginbot" = { value = "$BEGIN", aliases = ["begin"] }
+"github" = { value = "$GITHUB", aliases = ["git", "gh"] }
+"togglebit" = { value = "$TOGGLEBIT", aliases = ["toggle"] }
+"neonraytracer" = { value = "$NRT", aliases = ["nrt"] }
+"brookzerker" = { value = "$BROOKS", aliases = ["brooks"] }
+"arcticspacefox" = { value = "$ARCTIC", aliases = ["arctic"] }
+"dotfiles" = { value = "$DOTFILES", aliases = ["dot", "scripts"] }
+"discord" = { value = "$DISCORD", aliases = ["dc"] }
 
 [auto_commands]
 time = 300
 commands = ["dc", "dot", "arctic"]
 
-[user_access.iamhardliner]
-is_admin = true
+[groups.admin]
+users = ["iamhardliner"]
 
-[user_access.arcticspacefox]
-is_mod = true
-
-[user_access.iamhardbot]
-is_ignored = true
-
-[user_access.pretzelrocks]
-is_ignored = true
+[groups.mod]
+users = ["arcticspacefox"]
