@@ -59,6 +59,7 @@ augroup OpenTelescope
 augroup END
 
 let g:twitch_scratch_autosend = 1
+let g:twitch_chat_name_filter = ["iamhardliner", "iamhardbot", "pretzelrocks"]
 
 function! s:loadEnv()
     if filereadable(".env")
