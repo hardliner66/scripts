@@ -7,6 +7,7 @@ set -g -x EDITOR nvim
 
 alias v nvim
 alias v. "nvim ."
+alias vu "nvim +'PlugUpdate' +'qa'"
 
 function vc
     pushd ~/scripts
