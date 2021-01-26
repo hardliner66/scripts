@@ -21,6 +21,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'sheerun/vim-polyglot'
+Plug 'bakpakin/ats2.vim'
 
 Plug 'dense-analysis/ale'
 Plug 'ap/vim-buftabline'
@@ -36,10 +37,15 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'arthurxavierx/vim-caser'
 
+Plug 'skywind3000/asyncrun.vim'
+
+Plug 'hardliner66/vim-run'
 Plug 'hardliner66/neovim-twitch-chat'
 Plug 'tpope/vim-dotenv'
 
 Plug 'mtth/scratch.vim'
+
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 " themes
 Plug 'nightsense/office'
@@ -47,16 +53,12 @@ call plug#end()
 
 source ~/.config/nvim/defaults.vim
 
-function! s:checkForBrowse(dir) abort
-    if !isdirectory(a:dir)
-        return
-    endif
-    " call Telescope("find_files")
-endfunction
-
-augroup OpenTelescope
-    au BufEnter,VimEnter * call s:checkForBrowse(expand('<amatch>'))
+augroup goodbye_netrw
+  au!
+  autocmd VimEnter * silent! au! FileExplorer *
 augroup END
+
+nnoremap <silent><leader>r :VRun<cr>
 
 let g:twitch_scratch_autosend = 1
 let g:twitch_chat_name_filter = ["iamhardliner", "iamhardbot", "pretzelrocks"]
@@ -72,6 +74,8 @@ command! -nargs=0 LoadEnv call s:loadEnv()
 augroup dotenv
     au VimEnter * LoadEnv
 augroup END
+
+nnoremap <leader>a :CocAction<cr>
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)

@@ -11,14 +11,12 @@ then
 
   mkdir -p ~/aur-packages
   pushd ~/aur-packages
-    git clone https://aur.archlinux.org/neovim-nightly.git
-    pushd neovim-nightly
-      makepkg --noconfirm -si
+    git clone https://aur.archlinux.org/paru.git
+    pushd paru
+        makepkg --noconfirm -si
     popd
-    git clone https://aur.archlinux.org/snapd.git
-    pushd snapd
-      makepkg --noconfirm -si
-    popd
+    paru -S --noconfirm neovim-nightly
+    paru -S --noconfirm snapd
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
   popd

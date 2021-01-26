@@ -194,6 +194,7 @@ for_window [class=".*"] border pixel 0
 gaps inner 7
 
 exec --no-startup-id nitrogen --restore
+exec picom &
 exec $HOME/scripts/setup_monitors
 exec $HOME/scripts/set_mouse.sh
 

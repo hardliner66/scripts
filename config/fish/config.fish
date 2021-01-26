@@ -2,22 +2,15 @@
 # -x means export to sub processes
 set -g -x DIRENV_LOG_FORMAT ""
 set -g -x EDITOR nvim
+set -g -x ANDROID_HOME /opt/android-sdk
+set -g -x ANDROID_NDK_HOME /opt/android-ndk
 
 # eval (direnv hook fish)
 
-alias v nvim
-alias v. "nvim ."
+alias v 'nvim'
+alias v. 'nvim -c "Telescope find_files" .'
 alias vu "nvim +'PlugUpdate' +'qa'"
-
-function vc
-    pushd ~/scripts
-    set file_path .
-    if count $argv > /dev/null
-        set file_path $argv
-    end
-    nvim $file_path && ~/scripts/update.sh
-    popd
-end
+alias ts twitch-send
 
 # Fish fzf
 begin
@@ -31,6 +24,7 @@ end
 set -U fish_user_paths $fish_user_paths ~/.npm/bin
 set -U fish_user_paths $fish_user_paths ~/scripts
 set -U fish_user_paths $fish_user_paths ~/.gem/ruby/2.7.0/bin
+set -U fish_user_paths /home/steve/.local/share/ponyup/bin $fish_user_paths
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE

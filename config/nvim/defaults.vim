@@ -59,12 +59,16 @@ nnoremap <silent><leader>o gf<ESC>
 " force quit with non-zero exit code
 nnoremap <silent><leader><leader>q :cq!<CR>
 " nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
+nnoremap <silent><leader><leader>co :copen<CR>
 
+nnoremap <leader>cc :!cargo clean<cr>
 nnoremap <leader>cb :!cargo build<cr>
 nnoremap <leader>cbr :!cargo build --release<cr>
 nnoremap <leader>ct :!cargo test<cr>
 nnoremap <leader>cr :!cargo run<cr>
 nnoremap <leader>crr :!cargo run --release<cr>
+nnoremap <leader>cf :!cargo fmt<cr>
+nnoremap <leader>ca :!cargo add 
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
