@@ -12,7 +12,7 @@ steal_min = 1
 steal_max = 10
 
 [variables]
-ARCTIC = "Look what @ArcticSpaceFox made: iamhar2Bob iamhar2Energy iamhar2FoxUncomfy iamhar2BobChamp"
+ARCTIC = "https://www.twitch.tv/arcticspacefox"
 TOGGLEBIT = "https://www.twitch.tv/togglebit"
 NRT = "https://www.twitch.tv/neonraytracer"
 BROOKS = "https://www.twitch.tv/brookzerker"
@@ -23,8 +23,6 @@ BEGIN = "Check out a completely normal stream at: https://www.twitch.tv/beginbot
 
 [commands]
 "ping" = "pong"
-"bob" = "iamhar2Bob"
-"energy" = "iamhar2Energy"
 "lul" = "LUL"
 "os" = "Hardliner is using Manjaro btw."
 "beginbot" = { value = "$BEGIN", aliases = ["begin"] }
@@ -32,14 +30,14 @@ BEGIN = "Check out a completely normal stream at: https://www.twitch.tv/beginbot
 "togglebit" = { value = "$TOGGLEBIT", aliases = ["toggle"] }
 "neonraytracer" = { value = "$NRT", aliases = ["nrt"] }
 "brookzerker" = { value = "$BROOKS", aliases = ["brooks"] }
-"arcticspacefox" = { value = "$ARCTIC", aliases = ["arctic"] }
+"arcticspacefox" = { value = "Check out the stream of AwesomeSpaceFox: $ARCTIC", aliases = ["arctic"] }
 "dotfiles" = { value = "$DOTFILES", aliases = ["dot", "scripts"] }
 "discord" = { value = "$DISCORD", aliases = ["dc"] }
 "keyboard" = "Hardliner is using an ergodox-ez. https://ergodox-ez.com/"
 
 [auto_commands]
 time = 300
-commands = ["dc", "dot", "arctic"]
+commands = ["dc", "dot"]
 
 [groups.admin]
 users = ["iamhardliner"]
