@@ -9,7 +9,11 @@ set -g -x ANDROID_NDK_HOME /opt/android-ndk
 
 alias v 'nvim'
 alias v. 'nvim -c "Telescope find_files" .'
-alias vu "nvim +'PlugUpdate' +'qa'"
+alias vu 'nvim +"PlugUpdate" +"qa"'
+alias ls 'exa -la'
+alias cat 'bat'
+alias grep 'rg'
+alias tcc 'tccst'
 alias ts twitch-send
 
 # Fish fzf
@@ -21,10 +25,11 @@ begin
     end
 end
 
-set -U fish_user_paths $fish_user_paths ~/.npm/bin
-set -U fish_user_paths $fish_user_paths ~/scripts
-set -U fish_user_paths $fish_user_paths ~/.gem/ruby/2.7.0/bin
-set -U fish_user_paths /home/steve/.local/share/ponyup/bin $fish_user_paths
+set -x PATH $PATH ~/.npm/bin
+set -x PATH $PATH ~/go/bin
+set -x PATH $PATH ~/scripts
+set -x PATH $PATH ~/.gem/ruby/2.7.0/bin
+set -x PATH /home/steve/.local/share/ponyup/bin $PATH
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE
