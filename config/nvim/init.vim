@@ -11,14 +11,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'sheerun/vim-polyglot'
 Plug 'bakpakin/ats2.vim'
@@ -43,13 +40,15 @@ Plug 'hardliner66/vim-run'
 Plug 'hardliner66/neovim-twitch-chat'
 Plug 'tpope/vim-dotenv'
 
-Plug 'mtth/scratch.vim'
+" Plug 'mtth/scratch.vim'
 
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 " themes
 Plug 'nightsense/office'
 call plug#end()
+
+let g:use_async_vrun = 1
 
 source ~/.config/nvim/defaults.vim
 
@@ -114,6 +113,7 @@ augroup END
 let g:NERDTreeWinPos = "right"
 
 highlight Normal guifg=#b5b5aa guibg=#181818
+highlight Visual guifg=#f0f0e1 guibg=#484848
 highlight LineNr guifg=#9e9e95 guibg=#181818
 highlight CursorLineNr guifg=#a0a0a0 guibg=#303030
 highlight Pmenu guifg=#f0f0e1 guibg=#101010

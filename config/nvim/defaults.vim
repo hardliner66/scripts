@@ -30,8 +30,24 @@ set noswapfile
 "set nosmd
 set hidden
 
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
 set relativenumber
 set number
+
+if ! exists("g:use_async_vrun")
+    let g:use_async_vrun = 0
+endif
 
 nnoremap <leader>n :set invnumber invrelativenumber<CR>
 
@@ -59,7 +75,7 @@ nnoremap <silent><leader>o gf<ESC>
 " force quit with non-zero exit code
 nnoremap <silent><leader><leader>q :cq!<CR>
 " nnoremap <silent><leader><leader>wq :w<CR>:cq<CR>
-nnoremap <silent><leader><leader>co :copen<CR>
+nnoremap <silent><leader>co :copen<CR>
 
 nnoremap <leader>cc :!cargo clean<cr>
 nnoremap <leader>cb :!cargo build<cr>
@@ -67,8 +83,9 @@ nnoremap <leader>cbr :!cargo build --release<cr>
 nnoremap <leader>ct :!cargo test<cr>
 nnoremap <leader>cr :!cargo run<cr>
 nnoremap <leader>crr :!cargo run --release<cr>
-nnoremap <leader>cf :!cargo fmt<cr>
 nnoremap <leader>ca :!cargo add 
+
+nnoremap <leader>cf :!cargo fmt<cr>
 
 " Edit vimr configuration file
 nnoremap <Leader>ve :e $MYVIMRC<CR>
