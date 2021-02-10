@@ -5,7 +5,7 @@ then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
                   i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
                   dmenu opusfile miniupnpc fzf neofetch alacritty nitrogen \
-                  entr python3 screen ripgrep
+                  entr python3 screen ripgrep bat exa fd tokei
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
   chsh -s /usr/bin/fish
 
@@ -17,6 +17,7 @@ then
     popd
     paru -S --noconfirm neovim-nightly
     paru -S --noconfirm snapd
+    paru -S --noconfirm procs
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
   popd
