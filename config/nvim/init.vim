@@ -37,7 +37,7 @@ Plug 'arthurxavierx/vim-caser'
 Plug 'skywind3000/asyncrun.vim'
 
 Plug 'hardliner66/vim-run'
-Plug 'hardliner66/neovim-twitch-chat'
+Plug 'hardliner66/neovim-twitch-chat', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dotenv'
 
 " Plug 'mtth/scratch.vim'
@@ -57,7 +57,8 @@ augroup goodbye_netrw
   autocmd VimEnter * silent! au! FileExplorer *
 augroup END
 
-nnoremap <silent><leader>r :VRun<cr>
+nnoremap <silent><leader>r :VRunAsync<cr>
+nnoremap <silent><leader>s :VRun<cr>
 
 let g:twitch_scratch_autosend = 1
 let g:twitch_chat_name_filter = ["iamhardliner", "iamhardbot", "pretzelrocks"]
