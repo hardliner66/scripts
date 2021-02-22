@@ -8,4 +8,4 @@ i3-msg reload > /dev/null
 i3-msg restart > /dev/null
 
 # install all vim plugins
-nvim +'PlugInstall' +'qa'
+nvim +'PlugClean!' +'PlugInstall' +'qa'

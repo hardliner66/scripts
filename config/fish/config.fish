@@ -9,12 +9,13 @@ set -g -x ANDROID_NDK_HOME /opt/android-ndk
 
 alias v 'nvim'
 alias v. 'nvim -c "Telescope find_files" .'
-alias vu 'nvim +"PlugUpdate" +"qa"'
+alias vu 'nvim +"PlugClean!" +"PlugUpdate" +"qa"'
 alias ls 'exa -la'
 alias cat 'bat'
 alias grep 'rg'
 alias tcc 'tccst'
 alias ts twitch-send
+alias tw 'timew'
 
 # Fish fzf
 begin
