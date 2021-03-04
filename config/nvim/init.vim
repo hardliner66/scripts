@@ -15,6 +15,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'codota/tabnine-vim'
+
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'sheerun/vim-polyglot'
@@ -29,6 +31,7 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'cespare/vim-toml'
 Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 Plug 'itchyny/lightline.vim'
 

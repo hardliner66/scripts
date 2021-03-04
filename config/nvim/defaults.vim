@@ -93,6 +93,22 @@ nnoremap <Leader>ve :e $MYVIMRC<CR>
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
 " -----------------------------------------------------------------------------
+"     - Rust help -
+" -----------------------------------------------------------------------------
+function! RustDocs()
+    let l:word = expand("<cword>")
+    :call RustMan(word)
+endfunction
+
+function! RustMan(word)
+    let l:command  = ':term rusty-man ' . a:word
+    execute command
+endfunction
+
+:command! -nargs=1 Rman call RustMan(<f-args>)
+nmap <leader>rd :call RustDocs()<CR>
+
+" -----------------------------------------------------------------------------
 "     - Grepping -
 "     Grepping with ripgrep.
 "     If you don't have ripgrep installed you are in trouble!
