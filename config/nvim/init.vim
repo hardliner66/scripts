@@ -15,7 +15,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'codota/tabnine-vim'
+" Plug 'codota/tabnine-vim'
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
@@ -44,6 +44,7 @@ Plug 'hardliner66/neovim-twitch-chat', { 'do': ':!./install.sh' }
 Plug 'tpope/vim-dotenv'
 
 " Plug 'mtth/scratch.vim'
+Plug 'liuchengxu/vim-which-key'
 
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
@@ -51,9 +52,13 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'nightsense/office'
 call plug#end()
 
+" Always keep this at the top, just below the plug section
+" This is where leader gets set
+source ~/.config/nvim/defaults.vim
+
 let g:use_async_vrun = 1
 
-source ~/.config/nvim/defaults.vim
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 augroup goodbye_netrw
   au!

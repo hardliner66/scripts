@@ -23,7 +23,7 @@ set splitbelow
 set backspace=indent,eol,start
 set nowrap
 set nohlsearch
-set ttimeoutlen=10
+set timeoutlen=2000
 set mouse=
 set noswapfile
 "set colorcolumn=110
