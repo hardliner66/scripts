@@ -69,7 +69,7 @@ nnoremap <silent><leader>d :bd<CR>
 nnoremap <silent><leader><leader>d :bd!<CR>
 nnoremap <silent><leader>w :w<CR>
 " nnoremap <silent><leader>wq :wq<CR>
-nnoremap <silent><leader>q :q<CR>
+" nnoremap <silent><leader>q :q<CR>
 nnoremap <silent><leader>o gf<ESC>
 
 " force quit with non-zero exit code
