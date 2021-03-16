@@ -18,6 +18,8 @@ then
     paru -S --noconfirm neovim-nightly
     paru -S --noconfirm snapd
     paru -S --noconfirm procs
+    paru -S --noconfirm xxd-standalone
+    paru -S --noconfirm nerd-fonts-fira-code 
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
   popd

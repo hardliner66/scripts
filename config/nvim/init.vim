@@ -50,11 +50,15 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 " themes
 Plug 'nightsense/office'
+Plug 'ryanoasis/vim-devicons'
+Plug 'adelarsq/vim-devicons-emoji'
 call plug#end()
 
 " Always keep this at the top, just below the plug section
 " This is where leader gets set
 source ~/.config/nvim/defaults.vim
+
+set guifont=FiraCode\ Nerd\ Font\ Mono\ 16
 
 let g:use_async_vrun = 1
 
