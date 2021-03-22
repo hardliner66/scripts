@@ -1,0 +1,32 @@
+{
+	"diagnostic.enable": true,
+	"diagnostic.signOffset": 9999999,
+	"diagnostic.errorSign": "✖",
+	"diagnostic.infoSign": "✉",
+	"diagnostic.hintSign": "⚛",
+	"diagnostic.warnSign": "⚠",
+    "rust-analyzer": {
+        "inlayHints": {
+            "enable": false
+        },
+        "procMacro": {
+            "enable": true
+        },
+        "cargo": {
+            "loadOutDirsFromCheck": true
+        }
+    },
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
