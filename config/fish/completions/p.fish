@@ -1,5 +1,9 @@
-# complete -c p -x -a "(find ~/projects/ -type d -exec test -e '{}/.git' ';' -print -prune | sed 's!'$HOME'/projects/!!')" 
-# complete -c p -x -a "(find ~/projects/ -maxdepth 3 -type d -not -path '*/\.git/*' -not -name '\.git' | sed 's!'$HOME'/projects/!!')"
+set project_path $HOME/projects
+if test -n "$p_project_path"
+	set project_path $p_project_path
+end
 
-set paths (fd -H '(Cargo.toml|.git|CMakeLists.txt|package.json|build.zig)' ~/projects/ | rev | cut -d'/' -f2- | rev | sed 's!'$HOME'/projects/!!' | uniq | sort)
+set project_path (echo $project_path | sed -e "s/\/*\$//")
+
+set paths (fd -H '(Cargo.toml|.git|CMakeLists.txt|package.json|build.zig)' $project_path | rev | cut -d'/' -f2- | rev | sed -E 's!'$project_path'\/?!!' | uniq | sort)
 complete -c p -x -a "$paths"
