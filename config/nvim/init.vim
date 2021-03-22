@@ -10,6 +10,8 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dotenv'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -17,12 +19,12 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " Plug 'codota/tabnine-vim'
 
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'dense-analysis/ale'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'bakpakin/ats2.vim'
 
-Plug 'dense-analysis/ale'
 Plug 'ap/vim-buftabline'
 
 Plug 'jiangmiao/auto-pairs'
@@ -38,10 +40,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'arthurxavierx/vim-caser'
 
 Plug 'skywind3000/asyncrun.vim'
+Plug 'Shougo/vinarise.vim'
 
 Plug 'hardliner66/vim-run'
 Plug 'hardliner66/neovim-twitch-chat', { 'do': ':!./install.sh' }
-Plug 'tpope/vim-dotenv'
 
 " Plug 'mtth/scratch.vim'
 Plug 'liuchengxu/vim-which-key'
@@ -57,6 +59,10 @@ call plug#end()
 " Always keep this at the top, just below the plug section
 " This is where leader gets set
 source ~/.config/nvim/defaults.vim
+
+" This is needed for vim-dispatch to not be slow
+set shell=/bin/sh
+nnoremap <silent><leader>q :Copen<CR>
 
 set guifont=FiraCode\ Nerd\ Font\ Mono\ 16
 
@@ -86,12 +92,6 @@ command! -nargs=0 LoadEnv call s:loadEnv()
 augroup dotenv
     au VimEnter * LoadEnv
 augroup END
-
-nnoremap <leader>a :CocAction<cr>
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>F2 <Plug>(coc-rename)
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -123,13 +123,25 @@ augroup Rainbow
     au Syntax * RainbowParenthesesLoadChevrons
 augroup END
 
-let g:NERDTreeWinPos = "right"
-
 highlight Normal guifg=#b5b5aa guibg=#181818
 highlight Visual guifg=#f0f0e1 guibg=#484848
 highlight LineNr guifg=#9e9e95 guibg=#181818
 highlight CursorLineNr guifg=#a0a0a0 guibg=#303030
 highlight Pmenu guifg=#f0f0e1 guibg=#101010
+
+nnoremap <leader>mc  :Make! clean<cr>
+nnoremap <leader>mb  :Make! build<cr>
+nnoremap <leader>mbr :Make! build --release<cr>
+nnoremap <leader>mt  :Make! test<cr>
+nnoremap <leader>mr  :Make! run<cr>
+nnoremap <leader>mrr :Make! run --release<cr>
+
+nnoremap <leader>a :CocAction<cr>
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>F2 <Plug>(coc-rename)
+
 highlight CocErrorSign guifg=#aa0000
 highlight CocHintSign guifg=#15889d
 
@@ -149,6 +161,7 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -167,3 +180,37 @@ nmap <silent> <M-Enter> <Plug>(coc-codeaction)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-n>"
+  nnoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-p>"
+  inoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-n> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-n>"
+  vnoremap <silent><nowait><expr> <C-p> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-p>"
+endif
+
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+augroup CocFixSymbols
+	if has('nvim-0.3.2')
+		autocmd User CocNvimInit silent :!touch ~/.config/nvim/coc-settings.json
+	else
+		autocmd User CocNvimInit silent :!touch ~/.vim/coc-settings.json
+	end
+augroup END
