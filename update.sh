@@ -4,6 +4,7 @@
 cp -r -f $(dirname "${BASH_SOURCE[0]}")/config/* ~/.config/
 
 cp tmux.conf ~/.tmux.conf
+cp -r cargo/* ~/.cargo
 
 # reload i3
 i3-msg reload > /dev/null
