@@ -38,7 +38,7 @@ BEGIN = "Check out a completely normal stream at: https://www.twitch.tv/beginbot
 "vote" = "Vote on a separate Twitch category for programming https://twitch.uservoice.com/forums/310210-discover-browsing-and-searching/suggestions/39899215-programming-should-be-a-seperate-category-from-sci | In the meantime you can try https://beemstream.com to search for specific programming topics"
 
 [auto_commands]
-time = 300
+time = 600
 commands = ["dc", "dot"]
 
 [groups.admin]
