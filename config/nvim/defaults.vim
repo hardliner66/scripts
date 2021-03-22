@@ -2,9 +2,9 @@ let mapleader = " "
 
 set tabstop=4
 set shiftwidth=4
+set noexpandtab
 set nobackup
 set nowritebackup
-set expandtab
 set whichwrap+=<,>,h,l,[,]
 set incsearch
 set ignorecase
@@ -125,5 +125,17 @@ endfunction
 command! -nargs=* Find call RipGrepping(<q-args>)
 
 nmap <C-f> :Find 
+
+" " vim -b : edit binary using xxd-format!
+" augroup Binary
+"   au!
+"   au BufReadPre   *.bin,*.exe let &bin=1
+"   au BufReadPost  *.bin,*.exe if &bin | %!xxd
+"   au BufReadPost  *.bin,*.exe set ft=xxd | endif
+"   au BufWritePre  *.bin,*.exe if &bin | %!xxd -r
+"   au BufWritePre  *.bin,*.exe endif
+"   au BufWritePost *.bin,*.exe if &bin | %!xxd
+"   au BufWritePost *.bin,*.exe set nomod | endif
+" augroup END
 
 cmap w!! w !sudo /run/current-system/sw/bin/tee > /dev/null %
