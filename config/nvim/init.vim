@@ -3,9 +3,6 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
 
-" " File tree
-" Plug 'scrooloose/nerdtree'
-
 " Plugin to help surrond stuff with other stuff
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -17,10 +14,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Plug 'codota/tabnine-vim'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'dense-analysis/ale'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'bakpakin/ats2.vim'
@@ -135,6 +129,8 @@ nnoremap <leader>mbr :Make! build --release<cr>
 nnoremap <leader>mt  :Make! test<cr>
 nnoremap <leader>mr  :Make! run<cr>
 nnoremap <leader>mrr :Make! run --release<cr>
+
+let g:coc_global_extensions = ['coc-tabnine', 'coc-rust-analyzer']
 
 nnoremap <leader>a :CocAction<cr>
 
