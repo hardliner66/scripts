@@ -46,8 +46,6 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 
 " themes
 Plug 'nightsense/office'
-Plug 'ryanoasis/vim-devicons'
-Plug 'adelarsq/vim-devicons-emoji'
 call plug#end()
 
 " Always keep this at the top, just below the plug section
@@ -202,11 +200,3 @@ if has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
-
-augroup CocFixSymbols
-	if has('nvim-0.3.2')
-		autocmd User CocNvimInit silent :!touch ~/.config/nvim/coc-settings.json
-	else
-		autocmd User CocNvimInit silent :!touch ~/.vim/coc-settings.json
-	end
-augroup END
