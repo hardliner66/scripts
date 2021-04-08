@@ -2,20 +2,30 @@
 # -x means export to sub processes
 set -g -x DIRENV_LOG_FORMAT ""
 set -g -x EDITOR nvim
+set -g -x VISUAL nvim
 set -g -x ANDROID_HOME /opt/android-sdk
 set -g -x ANDROID_NDK_HOME /opt/android-ndk
 
 # eval (direnv hook fish)
 
+alias c 'cd'
 alias v 'nvim'
 alias v. 'nvim -c "Telescope find_files" .'
 alias vu 'nvim +"PlugClean!" +"PlugUpdate" +"qa"'
-alias ls 'exa -la'
+alias ls 'exa'
+alias ll 'exa -l'
+alias la 'exa -la'
 alias cat 'bat'
 alias grep 'rg'
 alias tcc 'tccst'
 alias ts twitch-send
 alias tw 'timew'
+
+abbr g 'git'
+abbr scripts 'cd ~/scripts'
+abbr x 'exit'
+abbr c 'clear'
+abbr cdd 'cd -'
 
 # Fish fzf
 begin

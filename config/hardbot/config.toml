@@ -20,17 +20,19 @@ GITHUB = "https://github.com/hardliner66"
 DOTFILES = "https://github.com/hardliner66/scripts"
 DISCORD = "https://discord.gg/nbuGqpA"
 BEGIN = "Check out a completely normal stream at: https://www.twitch.tv/beginbot"
+FITB = "https://github.com/ArcticSpaceFox/FoxInTheBox"
 
 [commands]
 "ping" = "pong"
 "lul" = "LUL"
 "os" = "Hardliner is using Manjaro btw."
+"foxinthebox" = { value = "Fox in the box is a CTF site that @ArcticSpaceFox is working on. $FITB", aliases = ["fitb"] }
 "beginbot" = { value = "$BEGIN", aliases = ["begin"] }
 "github" = { value = "$GITHUB", aliases = ["git", "gh"] }
 "togglebit" = { value = "$TOGGLEBIT", aliases = ["toggle"] }
 "neonraytracer" = { value = "$NRT", aliases = ["nrt"] }
 "brookzerker" = { value = "$BROOKS", aliases = ["brooks"] }
-"arcticspacefox" = { value = "Check out the stream of AwesomeSpaceFox: $ARCTIC", aliases = ["arctic"] }
+"arcticspacefox" = { value = "Check out the stream of AwesomeSpaceFox: $ARCTIC, creator of !fitb", aliases = ["arctic"] }
 "dotfiles" = { value = "$DOTFILES", aliases = ["dot", "scripts"] }
 "discord" = { value = "$DISCORD", aliases = ["dc"] }
 "keyboard" = "Hardliner is using an ergodox-ez. https://ergodox-ez.com/"

@@ -5,11 +5,11 @@ function p
 	end
 
 	set last_dir (pwd)
-	cd $project_path
 	set file_path .
 	if count $argv > /dev/null
 		set file_path $argv
 	end
+	set file_path "$project_path/$file_path"
 	cd $file_path
 	if test $status -ne 0
 		cd $last_dir
