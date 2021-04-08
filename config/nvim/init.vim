@@ -56,6 +56,17 @@ source ~/.config/nvim/defaults.vim
 set shell=/bin/sh
 nnoremap <silent><leader>q :Copen<CR>
 
+function! s:openFishShell()
+	let old_shell = &shell
+	let &shell = '/usr/bin/fish'
+	execute ":term"
+	execute "normal! i"
+	let &shell = old_shell
+endfunction
+
+command! -nargs=0 Fish call s:openFishShell()
+
+
 set guifont=FiraCode\ Nerd\ Font\ Mono\ 16
 
 let g:use_async_vrun = 1

@@ -62,6 +62,7 @@ modules-left = bspwm i3
 modules-right = wlan eth filesystem memory cpu temperature date 
 
 ; tray-position = center
+tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 

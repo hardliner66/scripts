@@ -50,3 +50,8 @@ set -e SECRETS_FILE
 
 function fish_greeting
 end
+
+function fish_prompt
+end
+
+starship init fish | source
