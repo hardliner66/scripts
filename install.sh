@@ -19,6 +19,7 @@ then
     paru -S --noconfirm snapd
     paru -S --noconfirm procs
     paru -S --noconfirm xxd-standalone
+	paru -S --noconfirm ttf-jetbrains-mono
     paru -S --noconfirm nerd-fonts-fira-code 
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
