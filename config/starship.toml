@@ -10,6 +10,6 @@ success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being
 disabled = true
 
 [custom.worktime]
-command = """ tt show --format "{h}h {mm}m" """
+command = """ tt show --remaining --plain --format "RWT: {h}h {mm}m" """
 when = "tt status"
 shell = "sh"

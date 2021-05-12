@@ -9,11 +9,15 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dotenv'
+Plug 'tpope/vim-sleuth'
+
 Plug 'godlygeek/tabular'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'plasticboy/vim-markdown'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -27,7 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'cespare/vim-toml'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 
 Plug 'itchyny/lightline.vim'
@@ -67,9 +71,6 @@ endfunction
 
 command! -nargs=0 Fish call s:openFishShell()
 
-
-set guifont=FiraCode\ Nerd\ Font\ Mono\ 16
-
 let g:use_async_vrun = 1
 
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
@@ -77,6 +78,10 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 augroup goodbye_netrw
   au!
   autocmd VimEnter * silent! au! FileExplorer *
+augroup END
+
+augroup format_markdown
+autocmd BufWritePre *.md normal ":TableFormat"
 augroup END
 
 nnoremap <silent><leader>r :VRunAsync<cr>

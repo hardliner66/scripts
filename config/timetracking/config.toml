@@ -1,0 +1,17 @@
+min_daily_break = 30
+
+# set the daily time goal
+[time_goal.daily]
+# work hours to reach in a work day (0-24)
+hours = 8
+
+# work minutes to reach in a work day (0-59)
+minutes = 0
+
+# set the weekly time goal
+[time_goal.weekly]
+# work hours to reach in a work week (0-168)
+hours = 38
+
+# work minutes to reach in a work week (0-59)
+minutes = 30

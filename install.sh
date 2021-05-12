@@ -31,11 +31,16 @@ fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # call ./install.sh from the directory the script is in
 pushd $(dirname "${BASH_SOURCE[0]}")
-./install.sh
+./update.sh
 
 npm config set prefix ~/.npm
+
+~/.tmux/plugins/tpm/bin/install_plugins
 
 # reboot to get the keyboard stuff working
 reboot
