@@ -24,6 +24,7 @@
 
 ;; Plugins to be managed by packer.
 (use
+  :wbthomason/packer.nvim {}
   :tpope/vim-surround {}
   :tpope/vim-commentary {}
   :tpope/vim-fugitive {}
@@ -55,39 +56,22 @@
   :liuchengxu/vim-which-key {:mod :whichkey}
   :sakhnik/nvim-gdb {:run "./install.sh"}
   :nightsense/office {:mod :office}
+  :lambdalisue/suda.vim {}
+  :Olical/nvim-local-fennel {}
 
   ;:HerringtonDarkholme/yats.vim {}
-  ;:LnL7/vim-nix {}
   ;:Olical/AnsiEsc {}
-  ;:Olical/aniseed {:branch :develop}
-  ;:Olical/conjure {:branch :develop :mod :conjure}
-  ;:Olical/nvim-local-fennel {}
   ;:Olical/vim-enmasse {}
   ;:PeterRincker/vim-argumentative {}
-  ;:airblade/vim-gitgutter {}
   ;:clojure-vim/clojure.vim {}
   ;:clojure-vim/vim-jack-in {}
   ;:dag/vim-fish {}
   ;:easymotion/vim-easymotion {:mod :easymotion}
   ;:guns/vim-sexp {:mod :sexp}
   ;:hashivim/vim-terraform {}
-  ;:hrsh7th/nvim-compe {:mod :compe}
   ;:hylang/vim-hy {}
-  ;:itchyny/lightline.vim {:mod :lightline}
   ;:janet-lang/janet.vim {}
-  ;:jiangmiao/auto-pairs {:mod :auto-pairs}
-  ;:junegunn/fzf {:mod :fzf}
-  ;:junegunn/fzf.vim {}
-  ;:lambdalisue/suda.vim {}
-  ;:liuchengxu/vim-better-default {:mod :better-default}
-  ;:maxmellon/vim-jsx-pretty {}
-  ;:mbbill/undotree {:mod :undotree}
-  ;:norcalli/nvim-colorizer.lua {:mod :colorizer}
-  ;:pangloss/vim-javascript {}
-  ;:prettier/vim-prettier {:ft :javascript}
   ;:radenling/vim-dispatch-neovim {}
-  ;:srcery-colors/srcery-vim {:mod :srcery}
-  ;:tami5/compe-conjure {}
   ;:tpope/vim-abolish {}
   ;:tpope/vim-commentary {}
   ;:tpope/vim-dadbod {}
@@ -100,8 +84,5 @@
   ;:tpope/vim-surround {}
   ;:tpope/vim-unimpaired {}
   ;:tpope/vim-vinegar {}
-  ;:tweekmonster/startuptime.vim {}
-  ;:w0rp/ale {:mod :ale}
-  ;:wbthomason/packer.nvim {}
   ;:wlangstroth/vim-racket {}
   )

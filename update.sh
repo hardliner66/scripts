@@ -13,4 +13,4 @@ i3-msg reload > /dev/null
 i3-msg restart > /dev/null
 
 # install all vim plugins
-nvim +'PackerClean!' +'PackerInstall' +'qa'
+nvim +'PackerSync!' +'qa'
