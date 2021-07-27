@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# copy all configs into ~/.config
-cp -r -f $(dirname "${BASH_SOURCE[0]}")/config/* ~/.config/
+base_dir=$(dirname "${BASH_SOURCE[0]}")
 
-cp tmux.conf ~/.tmux.conf
-cp -r cargo/* ~/.cargo
+# copy all configs into ~/.config
+cp -r -f $base_dir/config/* ~/.config/
+
+cp $base_dir/tmux.conf ~/.tmux.conf
+cp -r $base_dir/cargo/* ~/.cargo
 
 # reload i3
 i3-msg reload > /dev/null
 i3-msg restart > /dev/null
 
 # install all vim plugins
-nvim +'PlugClean!' +'PlugInstall' +'qa'
+nvim +'PackerClean!' +'PackerInstall' +'qa'

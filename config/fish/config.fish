@@ -11,7 +11,7 @@ set -g -x ANDROID_NDK_HOME /opt/android-ndk
 alias c 'cd'
 alias v 'nvim'
 alias v. 'nvim -c "Telescope find_files" .'
-alias vu 'nvim +"PlugClean!" +"PlugUpdate" +"qa"'
+alias vu 'nvim +"PackerClean!" +"PackerUpdate" +"qa"'
 alias ls 'exa'
 alias ll 'exa -l'
 alias la 'exa -la'
@@ -40,6 +40,7 @@ set -x PATH $PATH ~/.npm/bin
 set -x PATH $PATH ~/go/bin
 set -x PATH $PATH ~/scripts
 set -x PATH $PATH ~/.gem/ruby/2.7.0/bin
+set -x PATH $PATH ~/.nimble/bin
 set -x PATH /home/steve/.local/share/ponyup/bin $PATH
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
