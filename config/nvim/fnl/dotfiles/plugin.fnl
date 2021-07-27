@@ -63,8 +63,8 @@
   ;:Olical/AnsiEsc {}
   ;:Olical/vim-enmasse {}
   ;:PeterRincker/vim-argumentative {}
-  ;:clojure-vim/clojure.vim {}
-  ;:clojure-vim/vim-jack-in {}
+  :clojure-vim/clojure.vim {}
+  :clojure-vim/vim-jack-in {}
   ;:dag/vim-fish {}
   ;:easymotion/vim-easymotion {:mod :easymotion}
   ;:guns/vim-sexp {:mod :sexp}
