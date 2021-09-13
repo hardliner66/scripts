@@ -50,7 +50,7 @@
   :skywind3000/asyncrun.vim {}
   :Shougo/vinarise.vim {}
   :hardliner66/vim-run {:mod :vrun}
-  :hardliner66/neovim-twitch-chat {:run "./install.sh" :mod :twitch_chat}
+  ; :hardliner66/neovim-twitch-chat {:run "./install.sh" :mod :twitch_chat}
   :Olical/aniseed {:tag :v3.20.0}
   :Olical/conjure {:tag :v4.22.1}
   :liuchengxu/vim-which-key {:mod :whichkey}

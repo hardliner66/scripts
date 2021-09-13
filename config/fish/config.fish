@@ -37,6 +37,7 @@ begin
 end
 
 set -x PATH $PATH ~/.npm/bin
+set -x PATH $PATH ~/.cargo/bin
 set -x PATH $PATH ~/go/bin
 set -x PATH $PATH ~/scripts
 set -x PATH $PATH ~/.gem/ruby/2.7.0/bin

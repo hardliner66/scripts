@@ -5,22 +5,20 @@ then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
                   i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
                   dmenu opusfile miniupnpc fzf neofetch kitty alacritty nitrogen \
-                  entr python3 screen ripgrep bat exa fd tokei
+                  entr python3 screen bat exa fd tokei paru neovim
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
   chsh -s /usr/bin/fish
 
   mkdir -p ~/aur-packages
   pushd ~/aur-packages
-    git clone https://aur.archlinux.org/paru.git
-    pushd paru
-        makepkg --noconfirm -si
-    popd
-    paru -S --noconfirm neovim-nightly
     paru -S --noconfirm snapd
     paru -S --noconfirm procs
     paru -S --noconfirm xxd-standalone
 	paru -S --noconfirm ttf-jetbrains-mono
     paru -S --noconfirm nerd-fonts-fira-code 
+    paru -S --noconfirm nodejs 
+    paru -S --noconfirm npm
+    paru -S --noconfirm ripgrep
     sudo systemctl enable --now snapd.socket
     sudo ln -s /bar/lib/snapd/snap /snap
   popd
