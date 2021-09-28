@@ -1,11 +1,13 @@
 #!/bin/bash
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 if command -v pacman &> /dev/null
 then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
                   i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
-                  dmenu opusfile miniupnpc fzf neofetch kitty alacritty nitrogen \
-                  entr python3 screen bat exa fd tokei paru neovim
+                  dmenu opusfile miniupnpc fzf neofetch kitty nitrogen \
+                  entr python3 screen bat exa fd tokei paru neovim curl
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
   chsh -s /usr/bin/fish
 
@@ -25,9 +27,10 @@ then
   python3 -m pip install --user --upgrade pynvim
 fi
 
-# install vim plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+nvm install latest
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -56,4 +56,6 @@ end
 function fish_prompt
 end
 
+nvm use latest
+
 starship init fish | source

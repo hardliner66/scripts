@@ -8,9 +8,12 @@ cp -r -f $base_dir/config/* ~/.config/
 cp $base_dir/tmux.conf ~/.tmux.conf
 cp -r $base_dir/cargo/* ~/.cargo
 
-# reload i3
-i3-msg reload > /dev/null
-i3-msg restart > /dev/null
+if command -v i3-msg &> /dev/null
+then
+	# reload i3
+	i3-msg reload 2>&1 > /dev/null
+	i3-msg restart 2>&1 > /dev/null
+fi
 
 # install all vim plugins
 nvim +'PackerSync!' +'qa'

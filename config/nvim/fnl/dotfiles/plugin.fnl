@@ -51,8 +51,8 @@
   :Shougo/vinarise.vim {}
   :hardliner66/vim-run {:mod :vrun}
   ; :hardliner66/neovim-twitch-chat {:run "./install.sh" :mod :twitch_chat}
-  :Olical/aniseed {:tag :v3.20.0}
-  :Olical/conjure {:tag :v4.22.1}
+  :Olical/aniseed {:branch :develop}
+  :Olical/conjure {:branch :develop}
   :liuchengxu/vim-which-key {:mod :whichkey}
   :sakhnik/nvim-gdb {:run "./install.sh"}
   :nightsense/office {:mod :office}
