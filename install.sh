@@ -31,7 +31,10 @@ fi
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-nvm install latest
+fisher install edc/bass
+
+nvm install default
+nvm use default
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
