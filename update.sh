@@ -16,4 +16,4 @@ then
 fi
 
 # install all vim plugins
-nvim +'PackerSync!' +'qa'
+nvim +'PackerSync' +'qa'

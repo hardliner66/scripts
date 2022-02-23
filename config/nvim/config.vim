@@ -43,12 +43,18 @@ let g:lightline = {
 filetype plugin on
 syntax on
 
-augroup Rainbow
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-    au Syntax * RainbowParenthesesLoadChevrons
+function! EnableRainbow()
+  execute ":RainbowParenthesesToggle"
+  augroup Rainbow
+    au Syntax   * RainbowParenthesesLoadRound
+    au Syntax   * RainbowParenthesesLoadSquare
+    au Syntax   * RainbowParenthesesLoadBraces
+    au Syntax   * RainbowParenthesesLoadChevrons
+  augroup END
+endfunction
+
+augroup EnableRainbow
+  au VimEnter * if exists(":RainbowParenthesesToggle") | call EnableRainbow() | endif
 augroup END
 
 highlight Normal guifg=#b5b5aa guibg=#181818
