@@ -58,6 +58,7 @@
   :nightsense/office {:mod :office}
   :lambdalisue/suda.vim {}
   :Olical/nvim-local-fennel {}
+  :machakann/vim-swap {}
 
   ;:HerringtonDarkholme/yats.vim {}
   ;:Olical/AnsiEsc {}
