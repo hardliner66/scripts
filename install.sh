@@ -33,8 +33,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 fisher install edc/bass
 
-nvm install default
-nvm use default
+nvm install node
+nvm use node
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
