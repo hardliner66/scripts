@@ -7,7 +7,8 @@ then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
                   i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
                   dmenu opusfile miniupnpc fzf neofetch kitty nitrogen \
-                  entr python3 screen bat exa fd tokei paru neovim curl
+                  entr python3 screen bat exa fd tokei paru neovim curl \
+		  python-pip
   sudo pacman -R --noconfirm mesa-demos lib32-mesa-demos
   chsh -s /usr/bin/fish
 
