@@ -5,7 +5,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 if command -v pacman &> /dev/null
 then
   sudo pacman -Sy base-devel discord polybar fakeroot binutils rofi fish \
-                  i3-gaps xorg xorg-xinit xterm jq xsel xclip nodejs npm \
+                  i3-gaps xorg xorg-xinit xterm jq xsel xclip \
                   dmenu opusfile miniupnpc fzf neofetch kitty nitrogen \
                   entr python3 screen bat exa fd tokei paru neovim curl \
 		  python-pip
