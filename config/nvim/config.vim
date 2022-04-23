@@ -180,6 +180,12 @@ command! -nargs=* Find call RipGrepping(<q-args>)
 
 nmap <C-f> :Find 
 
+augroup last_cursor_position
+    autocmd!
+    autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' | execute "normal! g`\"zvzz" | endif
+augroup END
+
 " " vim -b : edit binary using xxd-format!
 " augroup Binary
 "   au!
