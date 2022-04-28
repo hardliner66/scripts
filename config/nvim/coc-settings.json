@@ -5,6 +5,10 @@
 	"diagnostic.infoSign": "✉",
 	"diagnostic.hintSign": "⚛",
 	"diagnostic.warnSign": "⚠",
+	"zig.enabled": true,
+	"zig.startUpMessage": true,
+	"zig.path": "zls",
+	"zig.debugLog": false,
     "rust-analyzer": {
         "inlayHints": {
             "enable": false
@@ -27,6 +31,10 @@
                     "directory": "/tmp/ccls"
                 }
             }
-        }
+        },
+		"zls" : {
+		  "command": "/home/steve/projects/zig/zls/zig-out/bin/zls",
+		  "filetypes": ["zig"]
+		}
     }
 }

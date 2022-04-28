@@ -1,6 +1,9 @@
 #!/bin/sh
 
-export MONITOR=$(xrandr | grep -i HDMI | grep -iw connected | cut -d ' ' -f 1)
+# export MONITOR=$(xrandr | grep -i DP | grep -iw connected | cut -d ' ' -f 1)
+# export MONITOR=DP-0.3
+# export MONITOR=eDP-1.1
+export MONITOR=HDMI-0
 
 # Terminate already running bar instances
 killall -q polybar

@@ -41,7 +41,7 @@
   :bakpakin/ats2.vim {}
   :ap/vim-buftabline {}
   :jiangmiao/auto-pairs {}
-  :kien/rainbow_parentheses.vim {}
+  ; :kien/rainbow_parentheses.vim {}
   :cespare/vim-toml {}
   ; :vimwiki/vimwiki {}
   :mattn/calendar-vim {}
@@ -50,7 +50,6 @@
   :skywind3000/asyncrun.vim {}
   :Shougo/vinarise.vim {}
   :hardliner66/vim-run {:mod :vrun}
-  ; :hardliner66/neovim-twitch-chat {:run "./install.sh" :mod :twitch_chat}
   :Olical/aniseed {:branch :develop}
   :Olical/conjure {:branch :develop}
   :liuchengxu/vim-which-key {:mod :whichkey}
@@ -58,7 +57,34 @@
   :nightsense/office {:mod :office}
   :lambdalisue/suda.vim {}
   :Olical/nvim-local-fennel {}
-  :machakann/vim-swap {}
+  :ziglang/zig.vim {:mod :zig}
+  :kuon/rhai.vim {}
+  :machakann/vim-swap {} 
+  :itspriddle/vim-shellcheck {}
+  :radgeRayden/vim-scopes {}
+
+  :thindil/a.vim {}
+  :thindil/Ada-Bundle {}
+  :thindil/vim-xml {}
+  ; :ludovicchabant/vim-gutentags {}
+  :Yggdroot/indentLine {}
+  :marcweber/vim-addon-mw-utils {}
+  :luochen1990/rainbow {}
+  :thindil/robovim {}
+  :garbas/vim-snipmate {:mod :snipmate}
+  :honza/vim-snippets {}
+  :tomtom/tlib_vim {}
+  :KabbAmine/zeavim.vim {}
+  :pseewald/vim-anyfold {}
+  :rhysd/vim-grammarous {}
+  :mhinz/vim-signify {}
+  :easymotion/vim-easymotion {}
+  :skywind3000/vim-quickui {}
+
+  ; :mhinz/vim-startify {}
+
+  ; :liuchengxu/vista.vim {}
+  ; :dbeniamine/todo.txt-vim {}
 
   ;:HerringtonDarkholme/yats.vim {}
   ;:Olical/AnsiEsc {}

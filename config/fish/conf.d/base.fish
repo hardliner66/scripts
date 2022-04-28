@@ -6,8 +6,6 @@ set -g -x VISUAL nvim
 set -g -x ANDROID_HOME /opt/android-sdk
 set -g -x ANDROID_NDK_HOME /opt/android-ndk
 
-# eval (direnv hook fish)
-
 alias c 'cd'
 alias v 'nvim'
 alias v. 'nvim -c "Telescope find_files" .'
@@ -19,7 +17,11 @@ alias cat 'bat'
 alias grep 'rg'
 alias tcc 'tccst'
 alias ts twitch-send
-alias tw 'timew'
+alias ti 'timew'
+alias t 'task'
+alias nix-shell 'command nix-shell --command fish'
+alias nix-dev 'command nix develop --command fish'
+alias ztl 'zettl'
 
 abbr g 'git'
 abbr scripts 'cd ~/scripts'
@@ -36,13 +38,34 @@ begin
     end
 end
 
+bind \cb 'fbr'
+
 set -x PATH $PATH ~/.npm/bin
 set -x PATH $PATH ~/.cargo/bin
-set -x PATH $PATH ~/go/bin
 set -x PATH $PATH ~/scripts
-set -x PATH $PATH ~/.gem/ruby/2.7.0/bin
-set -x PATH $PATH ~/.nimble/bin
-set -x PATH /home/steve/.local/share/ponyup/bin $PATH
+set -x PATH $PATH ~/bin
+set -x PATH $PATH ~/go/bin
+set -x PATH $PATH /usr/local/go/bin
+set -x PATH $PATH ~/.fluvio/bin
+set -x PATH $PATH ~/.local/share/ponyup/bin
+set -x PATH $PATH ~/NuSMV-2.6.0-Linux/bin/
+set -x PATH $PATH ~/.local/bin
+set -x PATH $PATH ~/.vino/bin
+set -x PATH $PATH ~/projects/odin/Odin
+set -x PATH $PATH ~/j90x/bin
+set -x PATH $PATH ~/opt/GNAT/2021/bin
+if test -e '~/.nix-profile/etc/profile.d/nix.sh'
+  fenv source '~/.nix-profile/etc/profile.d/nix.sh'
+end
+
+eval (/home/steve/.nix-profile/bin/direnv hook fish)
+
+thefuck --alias k | source
+bind \cf 'k'
+
+export GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+fenv source "$GUIX_PROFILE/etc/profile"
 
 set SECRETS_FILE ~/.config/fish/secrets.fish
 if test -e $SECRETS_FILE
@@ -56,6 +79,12 @@ end
 function fish_prompt
 end
 
+source ~/.asdf/asdf.fish
+
+# nvm use latest
 load_nvm
 
 starship init fish | source
+
+# opam configuration
+source /home/steve/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true

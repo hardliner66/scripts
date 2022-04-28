@@ -59,7 +59,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 ; modules-center = mpd
-modules-right = wlan eth filesystem memory cpu temperature date 
+modules-right = wlan eth filesystem memory cpu temperature date battery
 
 ; tray-position = center
 tray-position = right

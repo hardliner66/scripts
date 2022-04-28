@@ -3,9 +3,9 @@
              util dotfiles.util}})
 
 ;; Generic Neovim configuration.
-(set nvim.o.tabstop 4)
-(set nvim.o.shiftwidth 4)
-(set nvim.o.expandtab false)
+(set nvim.o.tabstop 2)
+(set nvim.o.shiftwidth 2)
+(set nvim.o.expandtab true)
 (set nvim.o.backup false)
 (set nvim.o.writebackup false)
 (set nvim.o.whichwrap "<,>,h,l,[,]")

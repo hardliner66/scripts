@@ -4,4 +4,5 @@ export MONITOR=$(xrandr | grep -i DP | grep -iw connected | cut -d ' ' -f 1)
 export EXTERNAL_MONITOR=$(xrandr | grep -i HDMI | grep -iw connected | cut -d ' ' -f 1)
 
 xset s off -dpms
-xrandr --output $EXTERNAL_MONITOR --auto --right-of $MONITOR
+# xrandr --output $EXTERNAL_MONITOR --auto --right-of $MONITOR
+~/.screenlayout/work.sh

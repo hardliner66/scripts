@@ -23,6 +23,8 @@
 
 (nnoremaps :<leader><leader>q ":cq!<CR>")
 (nnoremaps :<leader>co ":copen<CR>")
+(nnoremap :<leader>n  ":cn<cr>")
+(nnoremap :<leader>p  ":cp<cr>")
 
 (nnoremap :<leader>cc  ":!cargo clean<cr>")
 (nnoremap :<leader>cb  ":!cargo build<cr>")

@@ -40,7 +40,7 @@ let g:lightline = {
   \     }
   \ }
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 function! EnableRainbow()
@@ -179,6 +179,18 @@ endfunction
 command! -nargs=* Find call RipGrepping(<q-args>)
 
 nmap <C-f> :Find 
+
+
+function Frolint()
+    silent! cex system('frolint --editor')
+    redraw!
+    if len(getqflist()) > 0 
+        :copen
+    endif
+endfunction
+command! -nargs=* FrolintLint call Frolint()
+
+nmap <leader>l :Frolint<cr>
 
 " " vim -b : edit binary using xxd-format!
 " augroup Binary
