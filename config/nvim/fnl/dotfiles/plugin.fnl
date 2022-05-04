@@ -92,6 +92,7 @@
   ;:PeterRincker/vim-argumentative {}
   :clojure-vim/clojure.vim {}
   :clojure-vim/vim-jack-in {}
+  :vladdoster/remember.nvim {}
   ;:dag/vim-fish {}
   ;:easymotion/vim-easymotion {:mod :easymotion}
   ;:guns/vim-sexp {:mod :sexp}

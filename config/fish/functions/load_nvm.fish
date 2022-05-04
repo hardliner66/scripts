@@ -1,5 +1,5 @@
 function load_nvm --on-variable="PWD"
-  set -l default_node_version (nvm version default)
+  set -l default_node_version (nvm version node)
   set -l node_version (nvm version)
   set -l nvmrc_path (nvm_find_nvmrc)
   if test -n "$nvmrc_path"
@@ -11,6 +11,6 @@ function load_nvm --on-variable="PWD"
     end
   else if test "$node_version" != "$default_node_version"
     echo "Reverting to default Node version"
-    nvm use default
+    nvm use node
   end
 end
