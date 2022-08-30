@@ -54,7 +54,7 @@
   :Olical/conjure {:branch :develop}
   :liuchengxu/vim-which-key {:mod :whichkey}
   :sakhnik/nvim-gdb {:run "./install.sh"}
-  :nightsense/office {:mod :office}
+  :hardliner66/office {:mod :office}
   :lambdalisue/suda.vim {}
   :Olical/nvim-local-fennel {}
   :ziglang/zig.vim {:mod :zig}
