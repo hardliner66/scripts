@@ -7,19 +7,23 @@
 (def- nnoremaps util.nnoremaps)
 (def- cmd util.cmd)
 
+(fn vsc_vim [key vscode_cmd nvim_cmd]
+  (nnoremaps key (.. ":" (if nvim.g.vscode vscode_cmd nvim_cmd) "<CR>")))
+
 ;; Generic mapping configuration.
 
 (nnoremap :<leader>n ":set invnumber invrelativenumber<cr>")
 
 ;; Spacemacs style leader mappings.
-(nnoremaps :<leader>k ":bn<cr>")
-(nnoremaps :<leader><leader>k ":bn!<CR>")
-(nnoremaps :<leader>j ":bp<CR>")
-(nnoremaps :<leader><leader>j ":bp!<CR>")
-(nnoremaps :<leader>d ":bd<CR>")
-(nnoremaps :<leader><leader>d ":bd!<CR>")
-(nnoremaps :<leader>w ":w<CR>")
+(vsc_vim :<leader>k "Tabnext" "bn")
+(when (not nvim.g.vscode) (nnoremaps :<leader><leader>k ":bn!<CR>"))
+(vsc_vim :<leader>j "Tabprevious" "bp")
+(when (not nvim.g.vscode) (nnoremaps :<leader><leader>j ":bp!<CR>"))
+(vsc_vim :<leader>d "Tabclose" "bd")
+(when (not nvim.g.vscode) (nnoremaps :<leader><leader>d ":bd!<CR>"))
+(vsc_vim :<leader>w "Write" "w")
 (nnoremaps :<leader>o "gf<ESC>")
+
 
 (nnoremaps :<leader><leader>q ":cq!<CR>")
 (nnoremaps :<leader>co ":copen<CR>")
