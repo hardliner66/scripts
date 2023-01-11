@@ -68,7 +68,15 @@ highlight CocHintSign guifg=#15889d
 
 let g:coc_global_extensions = ['coc-tabnine', 'coc-rust-analyzer']
 
-nnoremap <leader>a :CocAction<cr>
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -82,16 +90,22 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -109,11 +123,6 @@ nmap <silent> <M-Enter> <Plug>(coc-codeaction)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
@@ -186,6 +195,10 @@ augroup last_cursor_position
         \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' | execute "normal! g`\"zvzz" | endif
 augroup END
 
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 " " vim -b : edit binary using xxd-format!
 " augroup Binary
 "   au!
@@ -197,5 +210,15 @@ augroup END
 "   au BufWritePost *.bin,*.exe if &bin | %!xxd
 "   au BufWritePost *.bin,*.exe set nomod | endif
 " augroup END
+
+function InlineCommand(mode)
+    let l:cmd = input('Command: ')
+    let l:output = system(l:cmd)
+    let l:output = substitute(l:output, '[\r\n]*$', '', '')
+    execute 'normal ' . a:mode . l:output
+endfunction
+
+nmap <silent> \e :call InlineCommand('i')<CR>
+nmap <silent> \E :call InlineCommand('a')<CR>
 
 cmap w!! w !sudo /run/current-system/sw/bin/tee > /dev/null %
