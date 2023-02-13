@@ -56,3 +56,11 @@
 
 (package! evil-snipe :disable t)
 (package! org-jira)
+
+(package! tomelr)
+
+(package! yasnippet)
+(package! yasnippet-snippets)
+
+(package! ox-zola
+  :recipe (:host gIthub :repo "gicrisf/ox-zola"))
