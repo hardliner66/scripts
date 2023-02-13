@@ -43,6 +43,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+s exec xfce4-popup-whiskermenu
 bindsym $mod+Shift+Return exec kitty fish --private
 # bindsym $mod+Return exec alacritty
 # bindsym $mod+Shift+Return exec alacritty -e fish --private
@@ -98,13 +99,14 @@ bindsym $mod+Shift+f exec "sleep 3; i3-msg fullscreen disable"
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+w layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle split
+bindsym $mod+e exec thunar
+bindsym $mod+m exec emacs
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-bindsym --release $mod+Shift+s exec scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
-bindsym --release $mod+s exec scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+bindsym --release $mod+Shift+s exec xfce4-screenshooter
 bindsym $mod+Tab exec ~/scripts/i3-display-swap.sh
 
 # change focus between tiling / floating windows
@@ -161,7 +163,8 @@ bindsym $mod+Shift+r exec sh -c 'i3-msg reload && i3-msg restart'
 bindsym $mod+Shift+e exec sh -c '[ $(echo "YES" | dmenu -sb "#ff6600" -i -p "Really exit i3? Press [ESC] to cancel.") = "YES" ] && i3-msg exit'
 bindsym $mod+Shift+F4 exec sh -c '[ $(echo "YES" | dmenu -sb "#ff6600" -i -p "Really shutdown? Press [ESC] to cancel.") = "YES" ] && shutdown -h now'
 bindsym $mod+F4 exec sh -c '[ $(echo "YES" | dmenu -sb "#ff6600" -i -p "Really restart? Press [ESC] to cancel.") = "YES" ] && reboot'
-bindsym $mod+Shift+a exec sh -c 'loginctl lock-session'
+bindsym $mod+Shift+a exec xflock4
+# bindsym $mod+Shift+a exec sh -c 'loginctl lock-session'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

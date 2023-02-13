@@ -3,17 +3,17 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>i", ":set invnumber invrelativenumber<CR>")
 
-local function vsc_vim(mode, key, vscode_cmd, nvim_cmd)
+local function vsc_vim(mode, key, vscode_cmd, nvim_cmd, opt)
 		local command = nvim_cmd
 		if (vim.g.vscode) then
 				command = vscode_cmd
 		end
-		vim.keymap.set(mode, key, ":" .. command .. "<CR>")
+		vim.keymap.set(mode, key, ":" .. command .. "<CR>", opt)
 end
 
 vsc_vim("n", "<leader>k", "Tabnext",  "bn")
 vsc_vim("n", "<leader>j", "Tabprevious", "bp")
-vsc_vim("n", "<leader>d", "Tabclose", "bd")
+vsc_vim("n", "<leader>d", "Tabclose", "bd", { silent = true })
 vsc_vim("n", "<leader>w", "Write", "w")
 
 if (not vim.g.vscode) then
@@ -28,11 +28,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>D", [["_d]])
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set("n", "<leader>lf", ":!cl-indentify --replace %<cr>")
 
 vim.keymap.set("n", "<leader><leader>q", ":cq!<CR>", { silent = true })
 vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
@@ -50,7 +52,6 @@ vim.keymap.set("n", "<Leader>ve", ":e $MYVIMRC<CR>")
 vim.keymap.set("n", "<Leader>vr", ":source $MYVIMRC<CR>")
 vim.keymap.set("n", "<leader>sw", ":mksession! .quicksave.vim<cr>")
 vim.keymap.set("n", "<leader>sr", ":source .quicksave.vim<cr>")
-vim.keymap.set("n", "<leader>q", ":Copen<cr>", { silent = true })
 vim.keymap.set("n", "<leader>mc", ":Make! clean<cr>", { silent = true })
 vim.keymap.set("n", "<leader>mb", ":Make! build<cr>", { silent = true })
 vim.keymap.set("n", "<leader>mbr", ":Make! build --release<cr>", { silent = true })

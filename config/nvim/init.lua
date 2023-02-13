@@ -18,3 +18,5 @@ end
 ensure("wbthomason", "packer.nvim")
 
 require("steve")
+
+vim.cmd('source ~/.config/nvim/config.vim')
