@@ -49,15 +49,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(unpin! org-roam)
-(package! org-roam-ui)
-
-(package! websocket)
+(package! org-auto-tangle)
 
 (package! evil-snipe :disable t)
 (package! org-jira)
-
-(package! tomelr)
 
 (package! yasnippet)
 (package! yasnippet-snippets)
