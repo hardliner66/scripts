@@ -123,6 +123,8 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/.org/")
 
+(after! org-auto-tangle (add-hook 'org-mode-hook 'org-auto-tangle-mode))
+
 (setq work-dir "~/.work-config")
 (setq work-config (concat work-dir "/emacs/config.el"))
 (if (file-exists-p work-config) (load work-config))
