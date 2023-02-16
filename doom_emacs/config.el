@@ -16,7 +16,7 @@
     (interactive)
     (server-force-delete)
     (server-start))
-  
+
 (define-key special-event-map [sigusr1] 'signal-restart-server)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
@@ -124,6 +124,9 @@
 (setq org-directory "~/.org/")
 
 (after! org-auto-tangle (add-hook 'org-mode-hook 'org-auto-tangle-mode))
+
+(after! ccls
+  (setq ccls-initialization-options `(:cache (:directory ,(expand-file-name "~/.ccls-cache")))))
 
 (setq work-dir "~/.work-config")
 (setq work-config (concat work-dir "/emacs/config.el"))
