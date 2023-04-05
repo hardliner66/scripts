@@ -2,6 +2,7 @@
 # -x means export to sub processes
 set -g -x DIRENV_LOG_FORMAT ""
 set -g -x EDITOR nvim
+set -g -x SYSTEMD_EDITOR nvim
 set -g -x VISUAL nvim
 set -g -x ANDROID_HOME /opt/android-sdk
 set -g -x ANDROID_NDK_HOME /opt/android-ndk
