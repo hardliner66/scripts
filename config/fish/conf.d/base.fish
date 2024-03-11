@@ -29,6 +29,7 @@ alias ilem 'lem --eval "(lem-lisp-mode:start-lisp-repl t)"'
 alias vl 'docker run --user=(id -u):(id -u) -e CL_IMPLEMENTATION=sbcl --net=host --rm -it -v /home/steve:/home/steve -v (pwd):/mnt justin2004/slimv_box'
 
 abbr g 'git'
+abbr lg 'nvim +LazyGit'
 abbr scripts 'cd ~/scripts'
 abbr x 'exit'
 abbr c 'clear'
@@ -115,11 +116,6 @@ end
 
 function fish_prompt
 end
-
-source ~/.asdf/asdf.fish
-
-# nvm use latest
-load_nvm
 
 if status is-interactive
 starship init fish | source

@@ -870,6 +870,9 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		config = function()
 			-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+			if vim.fn.has("win32") then
+				require("nvim-treesitter.install").compilers = { "clang" }
+			end
 
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup({
@@ -961,7 +964,11 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd("source ~/.config/nvim/config.vim")
+if vim.loop.os_uname().sysname == "Linux" then
+	vim.cmd("source ~/.config/nvim/config.vim")
+else
+	vim.cmd("source $USERPROFILE/AppData/Local/nvim/config.vim")
+end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -28,13 +28,13 @@ then
   python3 -m pip install --user --upgrade pynvim
 fi
 
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
 fisher install edc/bass
 
-nvm install node
-nvm use node
+curl -fsSL https://fnm.vercel.app/install | bash
+
+fnm install --lts
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
